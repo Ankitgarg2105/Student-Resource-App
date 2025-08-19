@@ -69,7 +69,7 @@ class _DeveloperPageState extends State<DeveloperPage>{
   }
 
 
-  Widget _buildNaitikJainCard() {
+  Widget _buildCoordinatorCard() {
     return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance.collection('developer').snapshots(),
       builder: (context, snapshot) {
@@ -356,7 +356,7 @@ class _DeveloperPageState extends State<DeveloperPage>{
               const SizedBox(height: 15),
               Column(
                 children: [
-                  _buildNaitikJainCard(),
+                  _buildCoordinatorCard(),
                   _buildDeveloperGrid(),
                 ],
               ),
@@ -437,7 +437,7 @@ class _DeveloperPageState extends State<DeveloperPage>{
 
               // Column(
               //   children: [
-              //     _buildNaitikJainCard(),
+              //     _buildCoordinatorCard(),
               //     _buildDeveloperGrid(),
               //   ],
               // ),
