@@ -45,6 +45,7 @@ class _EditProfileState extends State<EditProfile> {
     '2022-2026',
     '2021-2025',
     '2024-2028',
+    '2025-2029',
   ];
 
   int Semester = APIs.me!.semester!;
@@ -155,6 +156,8 @@ class _EditProfileState extends State<EditProfile> {
 
   int _yearToBatch(String s) {
     switch (s) {
+      case "2025-2029":
+        return 2029;
       case "2024-2028":
         return 2028;
       case "2023-2027":
@@ -516,7 +519,9 @@ class _EditProfileState extends State<EditProfile> {
   }
 
   int hi(String s){
-    if(s == "2024-2028"){
+    if(s == "2025-2029"){
+      return 2029;
+    }else if(s == "2024-2028"){
       return 2028;
     }else if(s == "2023-2027"){
       return 2027;

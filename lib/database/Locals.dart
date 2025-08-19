@@ -81,7 +81,7 @@ class LOCALs{
         List<String> finalSearchSubjectList = [];
 
         // For 2026 batch   UPDATE THIS FOR LOOP WHEN YOU ADD OTHER BATCH DETAILS
-        for (var i = 2025; i <= 2028; i++) {
+        for (var i = 2025; i <= 2029; i++) {
           String yearName = i.toString();
           String? updatedStringOfItems = await local_storage.read(key: yearName);
           if (updatedStringOfItems != null) {

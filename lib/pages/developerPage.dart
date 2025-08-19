@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 import 'package:sembreaker/utils/contstants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -276,8 +275,8 @@ class _DeveloperPageState extends State<DeveloperPage>{
   Widget _buildIconButton(bool isGithub, String url) {
     return GestureDetector(
       onTap: () async {
-        if (await canLaunch(url)) {
-          await launch(url);
+        if (await launch(url)) {
+          await canLaunch(url);
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Could not launch the link')),

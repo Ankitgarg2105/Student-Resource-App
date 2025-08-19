@@ -222,7 +222,7 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                   const SizedBox(height: 15.0),
-                  const Text("----------------------------------OR-----------------------------------"),
+                  const Text("---------------------------OR---------------------------"),
                   const SizedBox(height: 15,),
                   TextField(
                     controller: nameController,

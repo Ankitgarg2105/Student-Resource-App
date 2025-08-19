@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
   List<Recents> _list = [];
   late GlobalKey<RefreshIndicatorState> refreshKey;
   List<String> eceList = [];
-  Random random = Random();
+  // Random random = Random();
   bool isthere = false;
 
 
@@ -395,17 +395,17 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(0),
-                    child: Text(
-                      "${10 + random.nextInt(51)} files",
-                      style: GoogleFonts.epilogue(
-                        textStyle: TextStyle(
-                          color: Constants.BLACK,
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: EdgeInsets.all(0),
+                  //   child: Text(
+                  //     "${10 + random.nextInt(51)} files",
+                  //     style: GoogleFonts.epilogue(
+                  //       textStyle: TextStyle(
+                  //         color: Constants.BLACK,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),

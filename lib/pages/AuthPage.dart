@@ -196,7 +196,7 @@ class _AuthState extends State<Auth> {
                             text: const TextSpan(
                               style: TextStyle(color: Colors.black, fontSize: 16),
                               children: [
-                                TextSpan(text: 'Sign Up With Google'),
+                                TextSpan(text: 'Sign In With Google'),
                               ],
                             ),
                           ),
@@ -205,7 +205,7 @@ class _AuthState extends State<Auth> {
                     ),
                   ),
                   const SizedBox(height: 15.0),
-                  const Text("----------------------------------OR-----------------------------------"),
+                  const Text("---------------------------OR---------------------------"),
                   const SizedBox(height: 15,),
                   TextField(
                     controller: emailController,

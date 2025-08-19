@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -143,15 +145,32 @@ class _SubjectDetailState extends State<SubjectDetail> with SingleTickerProvider
 
   Widget _buildTabContent(String type) {
     List<Widget> items = [];
-    if (type == "material") {
-      items = widget.subject.material.map((item) => _subCard(item.title, item.contentURL ,"material",widget.subject.material.isEmpty)).toList();
-    } else if (type == "papers") {
-      items = widget.subject.questionPapers.map((item) => _subCard(item.title, item.url ,"papers",widget.subject.questionPapers.isEmpty)).toList();
-    } else if (type == "links") {
-      items = widget.subject.importantLinks.map((item) => _subCard(item.title, item.contentURL ,"links",widget.subject.importantLinks.isEmpty)).toList();
+
+    if (type == "material" && widget.subject.material.isNotEmpty) {
+      items = widget.subject.material
+          .map((item) => _subCard(item.title, item.contentURL, "material", false))
+          .toList();
+    } else if (type == "papers" && widget.subject.questionPapers.isNotEmpty) {
+      items = widget.subject.questionPapers
+          .map((item) => _subCard(item.title, item.url, "papers", false))
+          .toList();
+    } else if (type == "links" && widget.subject.importantLinks.isNotEmpty) {
+      items = widget.subject.importantLinks
+          .map((item) => _subCard(item.title, item.contentURL, "links", false))
+          .toList();
     } else {
-      return Center(child: Text("No Data Found"));
+      return const Center(
+        child: Text(
+          "✏️ NO DATA FOUND!!",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      );
     }
+
     return SingleChildScrollView(
       child: Column(
         children: items,
@@ -159,7 +178,9 @@ class _SubjectDetailState extends State<SubjectDetail> with SingleTickerProvider
     );
   }
 
+
   Widget _subCard(String title, String link ,String type,bool check){
+    log(" -----------------ji  ${check}");
     if(check){
       return Column(
         children: [

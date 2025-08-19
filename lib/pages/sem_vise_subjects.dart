@@ -25,7 +25,7 @@ class _SemViseSubjectsState extends State<SemViseSubjects>{
   bool _isSearching = false;
   final storage = new FlutterSecureStorage();
   // late GlobalKey<RefreshIndicatorState> refreshKey;
-  Random random = Random();
+  // Random random = Random();
 
   @override
   void initState(){
@@ -235,7 +235,7 @@ class _SemViseSubjectsState extends State<SemViseSubjects>{
                     fontWeight: FontWeight.bold,
                   ),
                 ),),
-                subtitle: Text("${10 + random.nextInt(51)} Files"),
+                // subtitle: Text("${10 + random.nextInt(51)} Files"),
                 trailing: IconButton(
                   onPressed: (){},
                   icon: Icon(Icons.more_vert),
